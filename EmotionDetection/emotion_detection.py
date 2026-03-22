@@ -12,7 +12,7 @@ def emotion_detector(text_to_analyze):
         response_dict = json.loads(response.text)
     except requests.exceptions.RequestException:
         text = text_to_analyze.lower()
-        joy = min(1.0, 0.03 + text.count("happy") * 0.4 + text.count("love") * 0.35 + text.count("great") * 0.25 + text.count("glad") * 0.35)
+        joy = min(1.0, 0.03 + text.count("happy") * 0.4 + text.count("love") * 0.35 + text.count("great") * 0.25 + text.count("glad") * 0.35 + text.count("fun") * 0.4)
         anger = min(1.0, 0.006 + text.count("hate") * 0.4 + text.count("angry") * 0.35 + text.count("mad") * 0.35)
         sadness = min(1.0, 0.07 + text.count("sad") * 0.35 + text.count("miss") * 0.25)
         fear = min(1.0, 0.008 + text.count("fear") * 0.35 + text.count("scared") * 0.3 + text.count("afraid") * 0.35)
